@@ -1,0 +1,406 @@
+/* atencao nao esta responsivo */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+/* Reset básico */
+/* todo o documento 
+essa regra garante que todos os elementos da página comecem com as margens e preenchimentos zerados
+(os navegadores podem ter seus valores internos) e
+ com o modelo de caixa previsível, 
+ o que proporciona uma base consistente para
+ começar a estilizar a página e
+  evita inconsistências entre diferentes 
+  navegadores. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* elemento raiz no caso html */
+:root {
+    --corprincipal: hsl(0, 0%, 100%);
+}
+
+/* comportamento do scroll é feito
+de maneira suave por ex. quando vai
+para uma outra parte da mesma */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: var(--corprincipal);
+}
+
+/* Header e Navegação */
+.header-1 {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    /* nao muda com o scroll */
+    width: 100%;
+    /* A propriedade top só tem efeito 
+    quando o elemento está posicionado com position
+    cabeçalho ficará fixo no topo da página, 
+    e o valor top: 0; “cola” ele exatamente na borda
+     superior da janela (sem nenhum espaço).
+    Se fosse top: 10px;, por exemplo, o header
+     ficaria 10 pixels abaixo do topo da tela.
+     */
+    top: 0;
+}
+
+.nav {
+    width: 960px;
+    margin: 0 auto;
+    /*qualquer conteúdo que "extrapole" as bordas do elemento 
+    é simplesmente recortado e escondido */
+    overflow: hidden;
+}
+
+.nav-logo {
+    color: var(--corprincipal);
+    text-decoration: none;
+    /* tira sublinhado  links */
+    font-weight: bold;
+    /* espessura dos caracteres */
+    font-size: 20px;
+    float: left;
+    /* flutua um elemento */
+    padding: 5px 0;
+}
+
+.nav-menu {
+    float: right;
+}
+
+.nav-list {
+    list-style: none;
+    /* remover marcador */
+}
+
+.nav-item {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: var(--corprincipal);
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: #906ce4;
+    background-color: #555;
+    border-radius: 3px;
+}
+
+/* Seções gerais */
+section {
+    padding: 80px 0;
+    width: 960px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #8257E5;
+}
+
+/* Home Section */
+.home {
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.home-data {
+    float: left;
+    width: 500px;
+}
+
+.home-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.home-title-color {
+    color: #8257E5;
+}
+
+.home-img {
+    float: right;
+    width: 400px;
+    text-align: center;
+}
+
+.home-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* arredondar cantos */
+    object-fit: cover;
+    /* ajusta imagem ao container preservando sua proporção.  */
+}
+
+.button {
+    display: inline-block;
+    background-color: #8257E5;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+}
+
+.about-container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.about-subtitle {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.about-text {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Formation Section */
+.formation {
+    text-align: center;
+}
+
+.formation-container {
+    width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* pweb noite 27/08 */
+.formation-container h3 {
+    margin-bottom: 10px;
+}
+
+.formation-container p,
+.formation-container ol {
+    margin-bottom: 20px;
+}
+
+.formation-container ol {
+    padding-left: 40px;
+}
+
+/* Skills Section */
+.skills {
+    text-align: center;
+}
+
+.skills-container {
+    width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.skills-subtitle {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.skills-text {
+    margin-bottom: 30px;
+}
+
+.skills-data {
+    margin-bottom: 15px;
+    position: relative;
+    padding-right: 60px;
+}
+
+.skills-names {
+    margin-bottom: 5px;
+}
+
+.skills-bar {
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    top: 0;
+}
+
+.skills-html {
+    width: 80%;
+    background-color: #8257E5;
+}
+
+/* pweb manha 01/09 */
+.skills-css {
+    width: 75%;
+    background-color: #8257E5;
+}
+
+.skills-js {
+    width: 70%;
+    background-color: #8257E5;
+}
+
+.skills-percentage {
+    position: absolute;
+    /*posiciona em relação ao pai nesse caso skills-data - para a % ficar do lado da barra*/
+    top: 0;
+    right: 0;
+    /* alinha com a altura da barra */
+    line-height: 20px;
+    font-weight: bold;
+    /* Espaço entre a barra e o texto */
+    padding-left: 10px;
+}
+
+.skills-container h3 {
+    margin: 30px 0 15px 0;
+}
+
+.skills-container dl {
+    margin-left: 20px;
+}
+
+.skills-container dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.skills-container dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+.projects {
+    text-align: center;
+}
+
+.projects-text {
+    width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.projects-table {
+    width: 100%;
+    /* As bordas das células e da 
+    tabela se fundem em uma única borda,
+     eliminando o espaço entre elas. */
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.projects-table th,
+.projects-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.projects-table th {
+    background-color: #f2f2f2;
+}
+
+.projects-container {
+    width: 900px;
+    margin: 0 auto;
+    /* para nao transbordar se usar grid não precisa */
+    overflow: hidden;
+
+}
+
+.projects-img {
+    float: left;
+    width: 300px;
+    margin-right: 30px;
+    text-align: center;
+}
+
+
+.projects-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.projects-img figcaption {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+}
+
+.contact-container {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.contact-container a {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.contact-container img {
+    transition: transform 0.5s;
+}
+
+.contact-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+
+#footer-title {
+    color: #e58d57;
+}
+
+/** Próximos passos **/
+.bd-grid {}
+
+/* Classe bd-grid sera utilizada quando transformado em grids. Ela aparece nos seguintes elementos do HTML:
+header,nav,section com as classes home, about, formation, skills, projects e contact
+div com as classes about-container, formation-container, skills-container, projects-container e contact-container
+*/
+
+/* substituir o layout baseado em floats por Flexbox ou CSS Grid para tratar a responsividade e manutenibilidade. 
+As larguras fixas (960px, 800px, etc.) serão 
+convertidas para valores relativos em, rem, %
+ ou usar media queries para diferentes tamanhos de tela.
+ */
