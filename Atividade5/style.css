@@ -1,0 +1,96 @@
+#simples {
+	padding: 5px;
+	width: 500px; /* tamanho mais comum usado */
+    height: 500px;
+}
+
+
+/* Media queries */
+@media screen and (min-width: 1921px) {
+	
+	#simples {
+		background-color: green;
+	}
+
+    .simples_h2::before{
+        content: "Verde";
+        color: white;
+    }
+}
+
+@media screen and (max-width: 1920px) {
+	
+	#simples {
+		background-color: yellow;
+	}
+
+    .simples_h2::before{
+        content: "Amarelo";
+        color: black;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+	
+	#simples {
+		background-color: blue;
+	}
+
+    .simples_h2::before{
+        content: "Azul";
+        color: white;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+	
+	#simples {
+		background-color: red;
+	}
+
+    .simples_h2::before{
+        content: "Vermelho";
+        color: white;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+	
+	#simples {
+		background-color: pink;
+	}
+
+    .simples_h2::before{
+        content: "Rosa";
+        color: white;
+    }
+}
+
+@media screen and (max-width: 768px) {
+	
+	#simples {
+		background-color: orange;
+	}
+
+    .simples_h2::before{
+        content: "Laranja";
+        color: white;
+    }
+}
+
+
+@media screen and (max-width: 420px) {
+	
+	#simples {
+		background-color: gray;
+	}
+
+    .simples_h2::before{
+        content: "Cinza";
+        color: white;
+    }
+}
+
+
+
