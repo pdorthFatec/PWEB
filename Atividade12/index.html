@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Retangulo(x, y) {
+            this.base = x;
+            this.altura = y;
+            this.CalculaArea = function() {
+                return "Area = " + this.base * this.altura;
+            }
+        }
+
+        var retangulo = new Retangulo(10, 20);
+        alert(retangulo.CalculaArea());
+
+
+
+        class Conta {
+            constructor(){
+                this._nome;
+                this._banco;
+                this._numeroConta;
+                this._saldo;
+            }
+
+            setNome(value) { this._nome = value; }
+            getNome() { return this._nome; }
+
+            setBanco(value) { this._banco = value; }
+            getBanco() { return this._banco; }
+
+            setNumeroConta(value) { this._numeroConta = value; }
+            getNumeroConta() { return this._numeroConta; }
+
+            setSaldo(value) { this._saldo = value; }
+            getSaldo() { return this._saldo; }
+        }
+
+        class Corrente extends Conta {
+            constructor() {
+                super();
+                this._saldoEspecial;
+            }
+
+            setSaldoEspecial(value) { this._saldoEspecial = value; }
+            getSaldoEspecial() { return this._saldoEspecial; }
+        }
+
+        class Poupanca extends Conta {
+            constructor() {
+                super();
+                this._juros;
+                this._dataVencimento;
+            }
+
+            setJuros(value) { this._juros = value; }
+            getJuros() { return this._juros; }
+
+            setDataVencimento(value) { this._dataVencimento = value; }
+            getDataVencimento() { return this._dataVencimento; }
+        }
+
+        var objCorrente = new Corrente();
+        objCorrente.setNome("Marcelo");
+        objCorrente.setBanco("BB");
+        objCorrente.setNumeroConta("12569-4");
+        objCorrente.setSaldo(50000);
+        objCorrente.setSaldoEspecial(10000);
+
+        var objPoupanca = new Poupanca();
+        objPoupanca.setNome("Marli");
+        objPoupanca.setBanco("BB");
+        objPoupanca.setNumeroConta("1123654-5");
+        objPoupanca.setSaldo(100000);
+        objPoupanca.setDataVencimento("01/05/2025");
+        objPoupanca.setJuros("5%");
+
+        alert(`Nome: ${objCorrente.getNome()} - 
+            Banco: ${objCorrente.getBanco()} - 
+            Conta: ${objCorrente.getNumeroConta()} - 
+            Saldo: ${objCorrente.getSaldo()} - 
+            Saldo Especial: ${objCorrente.getSaldoEspecial()}`);
+
+        alert(`Nome: ${objPoupanca.getNome()} - 
+            Banco: ${objPoupanca.getBanco()} - 
+            Conta: ${objPoupanca.getNumeroConta()} - 
+            Saldo: ${objPoupanca.getSaldo()} - 
+            Juros: ${objPoupanca.getJuros()} - 
+            Data Vencimento: ${objPoupanca.getDataVencimento()}`);
+
+    </script>
+</body>
+</html>
+
+<p>
+01 - Utilize uma função construtora para o Retângulo
+receber (x,y) ou seja, base e altura, com um método
+para calcular a área. Criar um objeto e executar o
+método que calcula a área. Não precisa utilizar get e
+set na função construtora.
+</p>
+
+<p>
+02 - Crie uma Classe tipo Conta, com as propriedades nome
+correntista, banco, numero da conta e saldo. 
+Crie
+utilizando herança duas novas classes: 
+Corrente com Saldo Especial e 
+Poupanca com Juros, Data Vencimento. 
+
+Receber os dados via get e set. Criar um
+objeto de cada uma: Corrente e Poupanca e mostrar os
+seus dados.
+</p>
+
+
