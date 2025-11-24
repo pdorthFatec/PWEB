@@ -1,0 +1,12 @@
+
+Site montado com ajuda da IA (rodando em servidor apache):
+http://191.252.210.114:8080/fateconnect/
+
+Site montado em Angular (rodando em servidor nginx):
+http://191.252.210.114:8080/menu
+
+Só conseguimos manter um funcionando.
+Agora está funcionando o do Angular, mas não está 100%.
+
+Link para acesso da API:
+http://191.252.210.114:5000/swagger/index.html
