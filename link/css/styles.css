@@ -1,0 +1,504 @@
+/* GERAL E RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7f9; /* Cor de fundo principal da página */
+    color: #333;
+}
+
+/* 1. HEADER (TOPO) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4b4b4b; /* Cor de fundo do cabeçalho */
+    padding: 15px 50px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+header nav a:hover {
+    opacity: 1;
+}
+
+.btn-entrar {
+    background-color: #d83d3e; /* Cor do botão Entrar no header */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.btn-entrar:hover {
+    background-color: #c43334;
+}
+
+/* 2. MAIN CONTENT (CONTEÚDO PRINCIPAL) */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 80px auto; /* Espaçamento vertical */
+    padding: 0 20px;
+    gap: 50px; /* Espaço entre as duas colunas */
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+}
+
+/* SEÇÃO ESQUERDA (TEXTO) */
+.left-content {
+    flex: 1; /* Ocupa o espaço restante */
+    max-width: 50%;
+    padding: 20px;
+}
+
+.left-content h1 {
+    font-size: 2.8rem;
+    color: #4b4b4b;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.left-content p {
+    font-size: 1.1rem;
+    color: #6a6a6a;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23%; /* Garante espaço igual */
+}
+
+.feature-item i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.icon-red {
+    color: #d83d3e; /* Cor dos ícones de recurso */
+}
+
+.feature-item span {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #4b4b4b;
+}
+
+/* SEÇÃO DIREITA (FORMULÁRIO DE LOGIN) */
+.right-content {
+    width: 400px; /* Largura fixa para a caixa de login */
+    padding: 0;
+}
+
+.login-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+.login-box h2 {
+    font-size: 1.8rem;
+    color: #4b4b4b;
+    margin-bottom: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    font-size: 0.9rem;
+    color: #6a6a6a;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+form input:focus {
+    border-color: #a0a0a0;
+}
+
+.password-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.password-group input {
+    margin-bottom: 0; /* Remove margem extra */
+}
+
+.password-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    cursor: pointer;
+}
+
+.btn-login {
+    background-color: #d83d3e; /* Cor do botão principal de login */
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #c43334;
+}
+
+.cadastro-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #6a6a6a;
+}
+
+.cadastro-link a {
+    color: #d83d3e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cadastro-link a:hover {
+    text-decoration: underline;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE BÁSICA */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        margin: 50px auto;
+    }
+
+    .left-content, .right-content {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .features {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .feature-item {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    header nav {
+        margin-top: 10px;
+    }
+    header nav a {
+        margin-right: 15px;
+    }
+    .left-content h1 {
+        font-size: 2rem;
+    }
+    .features {
+        flex-direction: column;
+    }
+    .feature-item {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+        align-items: center;
+    }
+    .feature-item i {
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+}
+
+/* --- ESTILOS DA SEÇÃO DE SERVIÇOS --- */
+
+.services-section {
+    max-width: 1200px;
+    margin: 60px auto 100px auto; /* Margem superior e inferior */
+    padding: 0 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #4b4b4b; /* Cinza escuro do título */
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* Configuração do Grid (2 colunas por 2 linhas) */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas iguais */
+    gap: 30px; /* Espaço entre os cartões */
+}
+
+.service-card {
+    background-color: #eff1f3; /* Cor de fundo cinza claro do cartão */
+    padding: 40px 30px;
+    border-radius: 15px; /* Bordas arredondadas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s; /* Efeito suave ao passar o mouse */
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Leve subida ao passar o mouse */
+}
+
+/* O círculo vermelho do ícone */
+.icon-circle {
+    background-color: #d83d3e; /* Vermelho da marca */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-circle i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    color: #4b4b4b;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #7a7a7a;
+    line-height: 1.5;
+    max-width: 90%; /* Impede que o texto fique muito largo */
+}
+
+/* AJUSTES RESPONSIVOS PARA SERVIÇOS */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Vira 1 coluna em telas menores (celular) */
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* --- ESTILOS DA SEÇÃO COMO FUNCIONA --- */
+
+.how-it-works-section {
+    background-color: #f5f7f9; /* Mantém o fundo cinza claro */
+    padding: 60px 20px 100px 20px;
+    text-align: center;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espaço entre os dois cartões */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step-card {
+    background-color: white;
+    padding: 50px 30px 40px 30px;
+    border-radius: 15px;
+    width: 100%;
+    position: relative; /* Importante para posicionar o número */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-top: 20px; /* Espaço para o número não cortar */
+}
+
+.step-number {
+    position: absolute;
+    top: -25px; /* Faz o número subir para fora do cartão */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    width: 50px;
+    height: 50px;
+    background-color: #d83d3e; /* Vermelho */
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #f5f7f9; /* Borda da cor do fundo para dar efeito de recorte */
+}
+
+.step-card h3 {
+    font-size: 1.2rem;
+    color: #4b4b4b;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.step-card p {
+    color: #7a7a7a;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* --- ESTILOS DO RODAPÉ (FOOTER) --- */
+
+footer {
+    background-color: #445560; /* Cor azul-acinzentado escuro da imagem */
+    color: white;
+    padding: 60px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between;
+}
+
+/* Lado Esquerdo */
+.footer-left {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-left h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-left ul {
+    list-style: none;
+}
+
+.footer-left li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+}
+
+.footer-left li i {
+    margin-right: 10px;
+    width: 20px; /* Alinha os ícones */
+}
+
+/* Linha Divisória */
+.footer-divider {
+    width: 1px;
+    height: 100px; /* Altura da linha */
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 50px;
+}
+
+/* Lado Direito */
+.footer-right {
+    flex: 1;
+    text-align: right;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.footer-right .tagline {
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
+/* RESPONSIVIDADE DO RODAPÉ E STEPS */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .footer-left li {
+        justify-content: center;
+    }
+
+    .footer-divider {
+        display: none; /* Esconde a linha em telas pequenas */
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+}

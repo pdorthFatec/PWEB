@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caronas - FateConnect</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/caronas.css"> 
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">FateConnect</div>
+            <nav>
+                <a href="#">Achados & Perdidos</a>
+                <a href="#" class="active-link">Caronas</a>
+                <a href="#">Entre em Contato</a>
+                <div class="user-avatar" title="Perfil">MS</div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Caronas</h1>
+            <button class="btn-back" onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </button>
+        </div>
+
+        <div class="tabs-container">
+            <button class="tab-btn active" id="tab-buscar">
+                <i class="fas fa-search"></i> Buscar Carona
+            </button>
+            <button class="tab-btn" id="tab-ofertar-open">
+                <i class="fas fa-plus"></i> Ofertar Carona
+            </button>
+        </div>
+
+        <section class="filters-section">
+            <div class="filters-header" id="toggle-filters">
+                <h3><i class="fas fa-filter"></i> Filtros</h3>
+                <i class="fas fa-chevron-up chevron-icon"></i>
+            </div>
+            
+            <div class="filters-body" id="filters-body">
+                <form class="filters-grid">
+                    <div class="input-group">
+                        <label>Data</label>
+                        <input type="date">
+                    </div>
+                    <div class="input-group">
+                        <label>Hora</label>
+                        <input type="time">
+                    </div>
+                    <div class="input-group">
+                        <label>Destino</label>
+                        <input type="text" placeholder="Digite o destino">
+                    </div>
+                    <div class="input-group">
+                        <label>Tipo <i class="fas fa-info-circle info-icon" title="Informação sobre tipos"></i></label>
+                        <select>
+                            <option>Todos</option>
+                            <option>Solidária (Grátis)</option>
+                            <option>Igualitária (Rateio)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Caronas</label>
+                        <select>
+                            <option>Todas</option>
+                            <option>Apenas Minhas</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="filter-actions">
+                    <button class="btn-filter"><i class="fas fa-search"></i> Filtrar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-list">
+            <p style="text-align: center; padding: 50px;">Carregando dados...</p>
+        </section>
+
+    </main> 
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Entre em Contato</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> secretaria@fatec.gov.br</li>
+                    <li><i class="fas fa-phone-alt"></i> (15) 3238-5266</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Av. Eng. Carlos Reinaldo Mendes, 2015</li>
+                </ul>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-right">
+                <p>&copy; 2026 FateConnect. Todos os direitos reservados.</p>
+                <p class="tagline">Desenvolvido para facilitar a vida do Fatecano.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal-oferta" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ofertar Carona</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            
+            <form>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Destino*</label>
+                        <input type="text" placeholder="Ex: Shopping Cidade" name="destino" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Data*</label>
+                        <input type="text" placeholder="mm/dd/yyyy" onfocus="(this.type='date')" onblur="(this.value == '' ? this.type='text' : this.type='date')" name="dataPartida" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Hora*</label>
+                        <input type="time" name="horaPartida" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Tipo*</label>
+                        <select name="tipoCarona" required>
+                            <option value="" disabled selected>Selecione o tipo</option>
+                            <option value="solidaria">Solidária (Grátis)</option>
+                            <option value="igualitaria">Igualitária (Rateio)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row single-col">
+                    <div class="input-group">
+                        <label>Vagas Disponíveis*</label>
+                        <select name="qtdVagas" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="1">1 vaga</option>
+                            <option value="2">2 vagas</option>
+                            <option value="3">3 vagas</option>
+                            <option value="4">4 vagas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group full-width">
+                    <label>Descrição</label>
+                    <textarea placeholder="Informações adicionais sobre a carona (opcional)" rows="3" name="descricao"></textarea>
+                </div>
+
+                <button type="submit" class="btn-confirm">
+                    <i class="fas fa-car"></i> Confirmar Oferta
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/caronas.js"></script>
+</body>
+</html>
